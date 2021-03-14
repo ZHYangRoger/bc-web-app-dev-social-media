@@ -2,6 +2,7 @@
   "name": "bc-web-app-dev-social-media",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://zhyangroger.github.io/bc-web-app-dev-social-media/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
