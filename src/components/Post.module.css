@@ -1,0 +1,45 @@
+ul{
+    list-style: none;
+    margin: 0;
+    padding-inline-start: 0;
+}
+
+.header{
+    padding: 5px 5px;
+    display: flex;
+}
+
+.header img{
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+    object-fit: cover;
+}
+
+.header b{
+    margin-left: 8px;
+    font-size: smaller;
+    margin-top: 5px;
+}
+
+.photo img{
+    object-fit: cover;
+    width: 100%;
+}
+
+.buttons button{
+    margin-right: 10px;
+}
+
+.infoBar{
+    margin-left: 8px;
+}
+
+.time{
+    margin-bottom: 50px;
+    font-size: smaller;
+    text-transform: uppercase;
+    color: grey;
+}
