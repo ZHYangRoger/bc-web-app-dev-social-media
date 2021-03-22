@@ -35,11 +35,39 @@ ul{
 
 .infoBar{
     margin-left: 8px;
+    margin-right: 8px;
 }
 
 .time{
-    margin-bottom: 50px;
     font-size: smaller;
     text-transform: uppercase;
     color: grey;
+}
+
+.addComment{
+    border-bottom: 1px solid #efefef;
+    padding: 10px 0;
+    display: flex;
+    margin-bottom: 20px;
+}
+.addComment input{
+    background: none;
+    border: none;
+    height: 16px;
+    outline: none;
+    font:inherit;
+    padding: 0;
+    width: 100%;
+}
+.addComment ::placeholder { 
+    color: #999;
+}
+.addComment button{
+    color:#3897f0;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.userPost{
+    margin-bottom: 45px;
 }

@@ -1,10 +1,30 @@
 import React from "react";
 import css from './Post.module.css';
 import publicUrl from 'utils/publicUrl.js';
+import {useState} from 'react';
 
 import timespan from 'utils/timespan.js';
 
 export default function Post(props){
+
+    const [comment, setComment] = useState('');
+    const [toggleComment, setToggleComment] = useState(false);
+
+    function handleLike() {
+        props.onLike(props.post.id);
+    }
+    
+    function handleUnlike() {
+        props.onUnlike(props.post.id);
+    }
+
+    function handleSubmitComment(event){
+        props.onComment(props.post.id, comment); 
+        setComment(''); 
+        setToggleComment(false); 
+        event.preventDefault(); 
+    }
+
     return(
         <div className={css.userPost}>
             <div className={css.header}>
@@ -17,9 +37,12 @@ export default function Post(props){
             <div className={css.infoBar}>
                 <div className={css.buttons}>
                     <button>
-                        <img src={props.likes.self ? publicUrl('/assets/assets/unlike.svg') : publicUrl('/assets/like.svg')} alt="like"/>
+                    {props.likes.self?
+		                <img src={publicUrl('/assets/assets/unlike.svg')} onClick={handleUnlike}alt='Unlike Action'/> :
+		                <img src={publicUrl('/assets/assets/like.svg')} onClick={handleLike}alt='Like Action'/> 
+	                }
                     </button>
-                    <button>
+                    <button onClick={e=>setToggleComment(!toggleComment)}>
                         <img src={publicUrl('/assets/assets/comment.svg')} alt="comment"/>
                     </button>
                 </div>
@@ -35,6 +58,13 @@ export default function Post(props){
                     </p>
                 </div>
                 <p className={css.time}>{timespan(props.post.datetime)} ago</p>
+                <div>
+                    {toggleComment && <form className={css.addComment} onSubmit={handleSubmitComment}>
+                        <input type="text" placeholder="Add a comment…" value={comment} onChange={e=>setComment(e.target.value)}/>
+                        <button type="submit">Post</button>
+                    </form>
+                    }
+                </div>
             </div>
         </div>
     );

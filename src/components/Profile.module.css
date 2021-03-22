@@ -1,0 +1,45 @@
+.posts{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    margin-bottom: 50px;
+}
+
+.header{
+    display: flex;
+    margin-left: 10px;
+}
+
+.header img{
+    margin-top: 10px;
+    width: 90px;
+    border-radius: 90px;    
+}
+
+.header h2{
+    margin-left: 15px;
+    font-weight: normal;
+}
+
+.bio {
+    margin: 20px 10px 20px 10px
+}
+
+.info{
+    display: flex;
+    border-top: 1.5px solid lightgray;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.info section{
+    width: 33%;
+    text-align: center;
+}
+
+.weakCenter{
+    text-align: center;
+    color: grey;
+    margin-bottom: 5px;
+}
