@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/bc-web-app-dev-social-media/static/css/main.8c4f26a8.chunk.css",
-    "main.js": "/bc-web-app-dev-social-media/static/js/main.250c4eb0.chunk.js",
-    "main.js.map": "/bc-web-app-dev-social-media/static/js/main.250c4eb0.chunk.js.map",
-    "runtime-main.js": "/bc-web-app-dev-social-media/static/js/runtime-main.ac632448.js",
-    "runtime-main.js.map": "/bc-web-app-dev-social-media/static/js/runtime-main.ac632448.js.map",
-    "static/js/2.176af3c7.chunk.js": "/bc-web-app-dev-social-media/static/js/2.176af3c7.chunk.js",
-    "static/js/2.176af3c7.chunk.js.map": "/bc-web-app-dev-social-media/static/js/2.176af3c7.chunk.js.map",
-    "static/js/3.4cbd7a89.chunk.js": "/bc-web-app-dev-social-media/static/js/3.4cbd7a89.chunk.js",
-    "static/js/3.4cbd7a89.chunk.js.map": "/bc-web-app-dev-social-media/static/js/3.4cbd7a89.chunk.js.map",
+    "main.css": "/bc-web-app-dev-social-media/static/css/main.9bc3dce6.chunk.css",
+    "main.js": "/bc-web-app-dev-social-media/static/js/main.873ceb95.chunk.js",
+    "main.js.map": "/bc-web-app-dev-social-media/static/js/main.873ceb95.chunk.js.map",
+    "runtime-main.js": "/bc-web-app-dev-social-media/static/js/runtime-main.0f43d5c2.js",
+    "runtime-main.js.map": "/bc-web-app-dev-social-media/static/js/runtime-main.0f43d5c2.js.map",
+    "static/js/2.89cd5339.chunk.js": "/bc-web-app-dev-social-media/static/js/2.89cd5339.chunk.js",
+    "static/js/2.89cd5339.chunk.js.map": "/bc-web-app-dev-social-media/static/js/2.89cd5339.chunk.js.map",
+    "static/js/3.a950f287.chunk.js": "/bc-web-app-dev-social-media/static/js/3.a950f287.chunk.js",
+    "static/js/3.a950f287.chunk.js.map": "/bc-web-app-dev-social-media/static/js/3.a950f287.chunk.js.map",
     "index.html": "/bc-web-app-dev-social-media/index.html",
-    "static/css/main.8c4f26a8.chunk.css.map": "/bc-web-app-dev-social-media/static/css/main.8c4f26a8.chunk.css.map",
-    "static/js/2.176af3c7.chunk.js.LICENSE.txt": "/bc-web-app-dev-social-media/static/js/2.176af3c7.chunk.js.LICENSE.txt"
+    "static/css/main.9bc3dce6.chunk.css.map": "/bc-web-app-dev-social-media/static/css/main.9bc3dce6.chunk.css.map",
+    "static/js/2.89cd5339.chunk.js.LICENSE.txt": "/bc-web-app-dev-social-media/static/js/2.89cd5339.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ac632448.js",
-    "static/js/2.176af3c7.chunk.js",
-    "static/css/main.8c4f26a8.chunk.css",
-    "static/js/main.250c4eb0.chunk.js"
+    "static/js/runtime-main.0f43d5c2.js",
+    "static/js/2.89cd5339.chunk.js",
+    "static/css/main.9bc3dce6.chunk.css",
+    "static/js/main.873ceb95.chunk.js"
   ]
 }
