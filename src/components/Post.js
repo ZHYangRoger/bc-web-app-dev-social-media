@@ -5,6 +5,8 @@ import {useState} from 'react';
 
 import timespan from 'utils/timespan.js';
 
+import { Link } from "react-router-dom";
+
 export default function Post(props){
 
     const [comment, setComment] = useState('');
@@ -25,11 +27,28 @@ export default function Post(props){
         event.preventDefault(); 
     }
 
+    function loopComments(comments){
+        const commentList = comments.map((comment)=>
+            <li>
+                <Link key={comment.userId} to={`/profile/${comment.userId}`}>
+                    <b>{comment.userId} </b> 
+                </Link>
+                {comment.text}
+            </li>);
+        return (
+            <ul>{commentList}</ul>
+        );
+    }
+
     return(
         <div className={css.userPost}>
             <div className={css.header}>
-                <img src={publicUrl(props.user.photo)} alt="user photo"/>
-                <b>{props.user.id}</b>
+                <Link key={props.post.userId} to={`/profile/${props.post.userId}`}>
+                    <img src={publicUrl(props.user.photo)} alt="user photo"/>
+                </Link>
+                <Link key={props.post.userId} to={`/profile/${props.post.userId}`}>
+                    <b>{props.user.id}</b>
+                </Link>
             </div>
             <div className={css.photo}>
                 <img src={publicUrl(props.post.photo)} alt="post photo"/>
@@ -51,7 +70,9 @@ export default function Post(props){
                 </div>
                 <div className={css.userDescAndComments}>
                     <p>
-                        <b>{props.post.userId}</b> {props.post.desc}
+                        <Link key={props.post.userId} to={`/profile/${props.post.userId}`}>
+                            <b>{props.post.userId}</b> {props.post.desc}
+                        </Link>
                     </p>
                     <p>
                         {loopComments(props.comments)}
@@ -69,11 +90,4 @@ export default function Post(props){
         </div>
     );
 }
-
-export function loopComments(comments){
-    const commentList = comments.map((comment)=>
-        <li><b>{comment.userId}</b> {comment.text}</li>);
-    return (
-        <ul>{commentList}</ul>
-    );
-}
+ 

@@ -4,21 +4,24 @@ import publicUrl from 'utils/publicUrl';
 import PostThumbnail from './PostThumbnail';
 import Header from './Header';
 
+import { Link, useParams } from "react-router-dom";
+
 export default function Profile(props){
+  let {userId} = useParams();
   const {store} = props;
-  const curUser = store.users.find(user => user.id === store.currentUserId);
-  
+  const curUser = store.users.find((userId === undefined) ? user => user.id === store.currentUserId : user => user.id === userId);
+
   function getPost(){
-    return store.posts.filter(post => post.userId === store.currentUserId);
+    return store.posts.filter(post => post.userId === curUser.id);
   }
 
   function countFollower(){
-    const followers = store.followers.filter(follower => follower.userId === store.currentUserId);
+    const followers = store.followers.filter(follower => follower.userId === curUser.id);
     return followers.length;
   }
 
   function countFollowing(){
-    const following = store.followers.filter(follower => follower.followerId === store.currentUserId);
+    const following = store.followers.filter(follower => follower.followerId === curUser.id);
     return following.length;
   }
 
@@ -27,8 +30,31 @@ export default function Profile(props){
     return posts.length;
   }
 
-  function getPostElements(){
-    return getPost().map(post => <PostThumbnail props={post}/>);
+  function getSpecificPost() {
+    return getPost().map(post =>
+      <Link key={post.id} to={`/${post.id}`}>
+        <PostThumbnail props={post} />
+      </Link>
+    );
+  }
+
+  function handleFollow() {
+    props.onFollow(curUser.id, store.currentUserId);
+  }
+
+  function handleUnfollow() {
+    props.onUnfollow(curUser.id, store.currentUserId);
+  }
+
+  function renderFollowOrUnfollow(){
+    if (curUser.id === store.currentUserId) {
+      return;
+    }
+    let isFollowing = store.followers.some(following => following.userId === curUser.id && following.followerId === store.currentUserId);
+    return (
+      isFollowing ? <button className={css.unfollowBtn} onClick={handleUnfollow}>Unfollow</button>
+      : <button className={css.followBtn} onClick={handleFollow}>Follow</button>
+    );
   }
 
   return (
@@ -36,7 +62,10 @@ export default function Profile(props){
       <Header/>
       <div className={css.header}>
         <img src={publicUrl(curUser.photo)} alt="user photo"/>
-        <h2>{curUser.id}</h2>
+        <div>
+          <h2>{curUser.id}</h2>
+          {renderFollowOrUnfollow()}
+        </div>
       </div>
       <div className={css.bio}>
         <div><b>{curUser.name}</b></div>
@@ -57,7 +86,7 @@ export default function Profile(props){
         </section>
       </div>
       <div className={css.posts}>
-        {getPostElements()}
+        {getSpecificPost()}
       </div>
     </div>
 

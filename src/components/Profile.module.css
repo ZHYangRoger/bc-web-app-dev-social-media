@@ -12,8 +12,8 @@
 
 .header img{
     margin-top: 10px;
-    width: 90px;
-    border-radius: 90px;    
+    max-width: 110px;
+    border-radius: 100px;
 }
 
 .header h2{
@@ -42,4 +42,28 @@
     text-align: center;
     color: grey;
     margin-bottom: 5px;
+}
+
+.followBtn{
+    background: #3897f0;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin:10px 0px;
+    margin-left: 10px;
+}
+.unfollowBtn{
+    background:transparent;
+    border: 1px solid #dbdbdb;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin:10px 0px;
+    margin-left: 10px;
+}
+/* this will change the cursor to indicate its clickability*/
+button{
+  cursor:pointer;
 }

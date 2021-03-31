@@ -4,11 +4,15 @@ import publicUrl from 'utils/publicUrl';
 
 import Post from './Post';
 
+import { useParams } from 'react-router-dom';
+
 export default function Home(props){
+	let {postId} = useParams();
 	const {store} = props;
     return (
 	<div>
 		{store.posts.sort((a,b)=>new Date(b.datetime) - new Date(a.datetime))
+		.filter((postId === undefined) ? post => post : post => post.id === postId)
 		.map(post=>
 			<Post
 			key={post.id}

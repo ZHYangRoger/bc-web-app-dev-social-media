@@ -17,3 +17,7 @@ button{
     margin-top: 45px;
 }
 
+a, a:visited{
+    text-decoration: none;
+    color: black;
+  }
