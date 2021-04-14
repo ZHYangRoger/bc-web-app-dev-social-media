@@ -1,33 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import css from './Profile.module.css';
 import publicUrl from 'utils/publicUrl';
 import PostThumbnail from './PostThumbnail';
 import Header from './Header';
 
 import { Link, useParams } from "react-router-dom";
+import { StoreContext } from 'contexts/StoreContext';
 
-export default function Profile(props){
+export default function Profile(){
+  let {
+    users, posts, followers, currentUserId, addFollower, removeFollower
+  } = useContext(StoreContext);
+
   let {userId} = useParams();
-  const {store} = props;
-  const curUser = store.users.find((userId === undefined) ? user => user.id === store.currentUserId : user => user.id === userId);
+  //const {store} = props;
+  const curUser = users.find((userId === undefined) ? user => user.id === currentUserId : user => user.id === userId);
 
   function getPost(){
-    return store.posts.filter(post => post.userId === curUser.id);
+    return posts.filter(post => post.userId === curUser.id);
   }
 
   function countFollower(){
-    const followers = store.followers.filter(follower => follower.userId === curUser.id);
-    return followers.length;
+    const followers_cst = followers.filter(follower => follower.userId === curUser.id);
+    return followers_cst.length;
   }
 
   function countFollowing(){
-    const following = store.followers.filter(follower => follower.followerId === curUser.id);
+    const following = followers.filter(follower => follower.followerId === curUser.id);
     return following.length;
   }
 
   function countPost(){
-    const posts = getPost();
-    return posts.length;
+    const posts_cst = getPost();
+    return posts_cst.length;
   }
 
   function getSpecificPost() {
@@ -39,18 +44,18 @@ export default function Profile(props){
   }
 
   function handleFollow() {
-    props.onFollow(curUser.id, store.currentUserId);
+    addFollower(curUser.id, currentUserId);
   }
 
   function handleUnfollow() {
-    props.onUnfollow(curUser.id, store.currentUserId);
+    removeFollower(curUser.id, currentUserId);
   }
 
   function renderFollowOrUnfollow(){
-    if (curUser.id === store.currentUserId) {
+    if (curUser.id === currentUserId) {
       return;
     }
-    let isFollowing = store.followers.some(following => following.userId === curUser.id && following.followerId === store.currentUserId);
+    let isFollowing = followers.some(following => following.userId === curUser.id && following.followerId === currentUserId);
     return (
       isFollowing ? <button className={css.unfollowBtn} onClick={handleUnfollow}>Unfollow</button>
       : <button className={css.followBtn} onClick={handleFollow}>Follow</button>
