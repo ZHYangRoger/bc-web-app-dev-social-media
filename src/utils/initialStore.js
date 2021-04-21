@@ -5,7 +5,7 @@ export default {
         {
             id:"judy",
             email:"judy@bc.edu",
-            photo:"/assets/assets/user1.png",
+            photo:"/assets/user1.png",
             name: "Judy Hopps",
             bio:"The first rabbit officer of the Zootopia Police Department. Judy is determined to make the world a better place while breaking preconceptions about other species.",
             
@@ -13,7 +13,7 @@ export default {
         {
             id:"nick",
             email:"nick@bc.edu",
-            photo:"/assets/assets/user2.png",
+            photo:"/assets/user2.png",
             name:"Nick Wilde",
             bio:"Nick is a charming, small-time, con artist fox with a big mouth and a lot of opinions. But when a rabbit cop outsmarts him, he finds himself actually helping her solve a mystery."
         },
@@ -21,7 +21,7 @@ export default {
         {
             id:"flash",
             email:"flash@bc.edu",
-            photo:"/assets/assets/user3.png",
+            photo:"/assets/user3.png",
             name: "Flash Slothmore",
             bio:"Flash is a male three-toed sloth and a supporting character in Zootopia. He works at the Department of Mammal Vehicles.",
             
@@ -45,7 +45,7 @@ export default {
         {   
             id:"post-1",
             userId:"judy",
-            photo:"/assets/assets/post1.png",
+            photo:"/assets/post1.png",
             desc:"#zootopia #excited",
             datetime: "2020-02-09T22:45:28Z",   
 
@@ -53,35 +53,35 @@ export default {
         {
             id:"post-2",
             userId:"nick",
-            photo:"/assets/assets/post2.png",
+            photo:"/assets/post2.png",
             desc:"#happy #selfie with Judy",
             datetime: "2020-02-06T22:45:28Z",
         },
         {
             id:"post-3",
             userId:"flash",
-            photo:"/assets/assets/post3.png",
+            photo:"/assets/post3.png",
             desc:"Don't worry I got this",
             datetime: "2020-02-03T22:45:28Z",
         },
         {
             id:"post-4",
             userId:"judy",
-            photo:"/assets/assets/post4.png",
+            photo:"/assets/post4.png",
             desc:"Just trying to make a #friend",
             datetime: "2020-02-06T22:45:28Z",
         },
         {
             id:"post-5",
             userId:"judy",
-            photo:"/assets/assets/post5.png",
+            photo:"/assets/post5.png",
             desc:"I am now the first rabbit officer!",
             datetime: "2020-02-06T22:45:28Z",
         },
         {
             id:"post-6",
             userId:"judy",
-            photo:"/assets/assets/post6.png",
+            photo:"/assets/post6.png",
             desc:"Having #goodtimes with folks here",
             datetime: "2020-02-06T22:45:28Z",
         },

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useContext } from 'react';
 import css from './NewPost.module.css';
 import FileLoader from './FileLoader.js';
+import { Redirect } from "react-router-dom";
 
 import {
   useHistory
@@ -17,7 +18,7 @@ function NewPost() {
   const [error, setError] = useState(''); // to show an error message
 
   let {
-    addPost
+    addPost, currentUserId
   } = useContext(StoreContext);
 
   function handleFileDragEnter(e){
@@ -70,6 +71,7 @@ function NewPost() {
     history.push('/');
   }
   return (
+    !currentUserId?<Redirect to="login"/>:
     <div>
         <div className={css.photo}>
           {!photo?  <div className={css.message}>Drop your image</div>:

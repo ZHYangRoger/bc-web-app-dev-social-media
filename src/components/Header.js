@@ -7,17 +7,17 @@ export default function Header(){
       <nav className={css.header}>
         <div className={css.navItem}>
                 <button>
-                    <img src={publicUrl('/assets/assets/camera.svg')} alt="Camera"/>
+                    <img src={publicUrl('/assets/camera.svg')} alt="Camera"/>
                 </button>
         </div>
         <div>
                 <button>
-                    <img src={publicUrl('/assets/assets/logo.png')} alt="Logo"/>
+                    <img src={publicUrl('/assets/logo.png')} alt="Logo"/>
                 </button>
         </div>
         <div className={css.navItem}>
                 <button>
-                    <img src={publicUrl('/assets/assets/message.svg')} alt="Message"/>
+                    <img src={publicUrl('/assets/message.svg')} alt="Message"/>
                 </button>
         </div>
       </nav>

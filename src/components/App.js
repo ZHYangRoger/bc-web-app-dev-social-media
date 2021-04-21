@@ -14,6 +14,9 @@ import NewPost from './NewPost';
 import Activity from './Activity';
 import Profile from './Profile';
 
+import Login from './Login';
+import Signup from './Signup';
+
 import uniqueId from 'utils/uniqueId';
 
 import {
@@ -32,6 +35,12 @@ function App(props){
       <Header/>
       <main className={css.content}>
         <Switch>
+          <Route path="/signup">
+            <Signup />
+          </Route>
+          <Route path="/login">
+	          <Login />
+          </Route>
           <Route path="/explore">
             <Explore/>
           </Route>

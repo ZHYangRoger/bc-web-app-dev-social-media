@@ -57,12 +57,12 @@ export default function Post(props){
                 <div className={css.buttons}>
                     <button>
                     {props.likes.self?
-		                <img src={publicUrl('/assets/assets/unlike.svg')} onClick={handleUnlike}alt='Unlike Action'/> :
-		                <img src={publicUrl('/assets/assets/like.svg')} onClick={handleLike}alt='Like Action'/> 
+		                <img src={publicUrl('/assets/unlike.svg')} onClick={handleUnlike}alt='Unlike Action'/> :
+		                <img src={publicUrl('/assets/like.svg')} onClick={handleLike}alt='Like Action'/> 
 	                }
                     </button>
                     <button onClick={e=>setToggleComment(!toggleComment)}>
-                        <img src={publicUrl('/assets/assets/comment.svg')} alt="comment"/>
+                        <img src={publicUrl('/assets/comment.svg')} alt="comment"/>
                     </button>
                 </div>
                 <div className={css.likeCount}>

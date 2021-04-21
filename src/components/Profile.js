@@ -3,6 +3,7 @@ import css from './Profile.module.css';
 import publicUrl from 'utils/publicUrl';
 import PostThumbnail from './PostThumbnail';
 import Header from './Header';
+import { Redirect } from "react-router-dom";
 
 import { Link, useParams } from "react-router-dom";
 import { StoreContext } from 'contexts/StoreContext';
@@ -63,6 +64,7 @@ export default function Profile(){
   }
 
   return (
+    !curUser?<Redirect to="login"/>:
     <div>
       <Header/>
       <div className={css.header}>
